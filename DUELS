@@ -1,0 +1,16 @@
+-- XEROHUB - Versión Optimizada para Delta Executor
+local function StartHub()
+    local success, err = pcall(function()
+        -- Cambiado a la URL que solicitaste en tu mensaje
+        loadstring(game:HttpGet("https://botthepan.onrender.com/script/6deb906b1203c970"))()
+    end)
+    
+    if not success then
+        warn("[XEROHUB] Error al cargar el script principal: " .. tostring(err))
+    end
+end
+
+-- Ejecución segura dentro de un hilo separado (task.spawn)
+task.spawn(function()
+    StartHub()
+end)
